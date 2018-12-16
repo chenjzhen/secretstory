@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/build/intermediates/res/merged/release/layout/com_facebook_activity_layout.xml",
+        "source": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/res/layout/com_facebook_activity_layout.xml"
+    },
+    {
+        "merged": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/build/intermediates/res/merged/release/layout/socialize_share_menu_item.xml",
+        "source": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/res/layout/socialize_share_menu_item.xml"
+    },
+    {
+        "merged": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/build/intermediates/res/merged/release/layout/umeng_socialize_share.xml",
+        "source": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/res/layout/umeng_socialize_share.xml"
+    },
+    {
+        "merged": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/build/intermediates/res/merged/release/layout/com_facebook_login_fragment.xml",
+        "source": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/res/layout/com_facebook_login_fragment.xml"
+    },
+    {
+        "merged": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/build/intermediates/res/merged/release/layout/umeng_socialize_oauth_dialog.xml",
+        "source": "/Users/luozhien/Project/secret/Platform/android/Secret In Story/unity-android-resources/res/layout/umeng_socialize_oauth_dialog.xml"
+    }
+]

@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.movingstudio.secretstory.UnityPlayerActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="2"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:rowCount="4">
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="login"
+            android:text="登录" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="logout"
+            android:text="登出" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="pay"
+            android:text="支付" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="submitUserExtra"
+            android:text="提交用户信息" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="showCustom"
+            android:text="自定义信息" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="useCDKEY"
+            android:text="使用兑换码" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="showLogin"
+            android:text="是否显示登录" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="showBuy"
+            android:text="是否显示购买" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="showMarket"
+            android:text="是否显示评价入口" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="gotoMarket"
+            android:text="去评价" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="skipQQChat"
+            android:text="跳转QQ聊天" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="joinQQGroup"
+            android:text="添加QQ群" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="callPhone"
+            android:text="调起拨号盘" />
+
+        <Button
+            android:layout_columnWeight="1"
+            android:onClick="analyticsTest"
+            android:text="统计接口测试" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/result_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_large"
+        android:text="未登录" />
+
+</LinearLayout>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="UnityThemeSelector" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+</style>
+<style name="AppTheme" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+
+</style>
+<style name="ProgressSpinner" parent="@android:style/Widget.Holo.Light.Spinner">
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:visibility">gone</item>
+</style>
+</resources>

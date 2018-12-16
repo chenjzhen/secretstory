@@ -1,0 +1,134 @@
+-keep class bitter.jnibridge.* { *; }
+-keep class com.unity3d.player.* { *; }
+-keep class org.fmod.* { *; }
+-ignorewarnings
+
+########################################Yomob#################################################
+-keep class android.support.v4.*{ ;}
+
+-ignorewarnings
+
+-keepattributes Signature
+-keep class okhttp3.** { *; }
+-keep class okio.** { *; }
+
+# TGSDK
+-keep class com.soulgame.sgsdk.** { *; }
+
+
+# GooglePlayService
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+-keep @interface android.support.annotation.Keep
+-keep @android.support.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @android.support.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @android.support.annotation.Keep <methods>;
+}
+
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep public @com.google.android.gms.common.util.DynamiteApi class * {
+  public <fields>;
+  public <methods>;
+}
+
+-dontwarn android.security.NetworkSecurityPolicy
+
+
+
+    # Shenqiad
+-keep class com.shenqi.video.** {*;}
+
+# Bugly
+-dontwarn com.tencent.bugly.tgsdk.**
+-keep class com.tencent.bugly.tgsdk.** { *; }
+# ADX
+-dontwarn com.yomob.tgsdklib.**
+-keep class com.yomob.tgsdklib.** { *; }
+-keep interface com.yomob.tgsdklib.** { *; }
+
+    # Durian
+    -dontwarn com.xhxm.media.**
+
+# ZplayAds
+-keep class com.playableads.** { *;}
+-keep class com.playableads.PlayPreloadingListener {*;}
+-keep class com.playableads.PlayLoadingListener {*;}
+-keep class * implements com.playableads.PlayPreloadingListener {*;}
+-keep class * implements com.playableads.PlayLoadingListener {*;}
+-keep class com.playableads.PlayableAds {
+    public void onDestroy();
+    public static com.playableads.PlayableAds getInstance();
+    public void requestPlayableAds(com.playableads.PlayPreloadingListener);
+    public void requestPlayableAds(java.lang.String, com.playableads.PlayPreloadingListener);
+    public synchronized static com.playableads.PlayableAds init(android.content.Context, java.lang.String, java.lang.String);
+    public void presentPlayableAD(android.content.Context, com.playableads.PlayLoadingListener);
+    public boolean canPresentAd();
+}
+
+# Lanmei
+-keep class com.lm.** { *; }
+
+# Guangdiantong
+-keep class com.qq.e.** {
+    public protected *;
+}
+-keep class android.support.v4.app.NotificationCompat**{
+    public *;
+}
+-keep class android.support.v4.**{ *;}
+
+# Centrixlink
+-dontwarn com.centrixlink.**
+-keep public class com.centrixlink.**  { *; }
+
+# Mobvista
+    -keepattributes Signature
+    -keepattributes *Annotation*
+    -keep class com.mobvista.** {*; }
+    -keep interface com.mobvista.** {*; }
+    -keep class android.support.v4.** { *; }
+    -dontwarn com.mobvista.**
+    -keep class **.R$* { public static final int mobvista*; }
+    -keep class com.alphab.** {*; }
+    -keep interface com.alphab.** {*; }
+
+# Uniplay
+-keep public class com.uniplay.adsdk.**{*;}
+-keep public class com.mi.adtracker.**{*;}
+
+# ByteDance
+-keep class com.bytedance.sdk.openadsdk.** { *; }
+-keep class com.androidquery.callback.** { *; }
+
+# OneWay
+-keepattributes *Annotation*
+-keep enum mobi.oneway.sdk.* {*;}
+-keep class mobi.oneway.sdk.** {*;}
+########################################Yomob#################################################
+########################################Umeng#################################################
+
+-keep class com.umeng.** {*;}
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+########################################Umeng#################################################

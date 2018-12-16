@@ -1,0 +1,141 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral();
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+
+    }
+
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+//    configurations {
+//        all*.exclude group: 'com.android.support', module: 'support-v4'
+//    }
+}
+
+apply plugin: 'com.android.application'
+
+
+android {
+//    configurations { all*.exclude group: 'com.android.support', module: 'support-annotations' }
+//    configurations { all*.exclude group: 'com.android.support', module: 'support-v4' }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.movingstudio.secretstory"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionName = "1.3.5"
+        versionCode = 25
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dexOptions {
+        //preDexLibraries true
+        //incremental true
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            jniDebuggable true
+
+        }
+        release {
+            lintOptions {
+                disable 'MissingTranslation'
+            }
+            minifyEnabled false
+            //minifyEnabled true//启动代码混淆
+            //zipAlignEnabled true//Zipalign优化
+            //shrinkResources true// 移除无用的resource文件
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+
+        //packagingOptions {
+        //exclude 'META-INF/rxjava.properties'
+        //}
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            resources.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/aidl']
+            renderscript.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+            //jni.srcDirs = [] //cheat gradle to skip jni.srcDirs = ['jni'] so that disable ndkbuild
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+
+        tianyi {
+            java.srcDirs = ['src/tianyi/java']
+            manifest.srcFile 'src/tianyi/AndroidManifest.xml'
+            res.srcDirs = ['src/tianyi/res']
+            //jniLibs.srcDirs = ['src/tianyi/jniLibs']
+        }
+
+    }
+    productFlavors {
+        tianyi{
+            applicationId 'com.movingstudio.secretstory'
+            manifestPlaceholders = [MY_CHANNEL_VALUE: "tianyi"]
+        }
+
+    }
+    buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    //**************************************Umeng**************************************/
+    implementation  'com.umeng.umsdk:analytics:7.5.4'
+    implementation  'com.umeng.umsdk:common:1.5.4'
+    //**************************************Umeng**************************************/
+
+    //**************************************Zeus**************************************/
+    implementation 'com.android.support:support-core-utils:25.3.1'
+    //依赖云步SDK
+    //implementation(name: 'zeus_v2.7.0', ext: 'aar')
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.alibaba:fastjson:1.1.55.android'
+    //**************************************Zeus**************************************/
+
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'social/libs')
+    //implementation(name: 'applovin-7.6.0.0', 'ext': 'aar')
+    implementation project(':social')
+    // Applovin Adapter for AdMob
+    implementation project(':unity-android-resources')
+
+
+}
